@@ -1,15 +1,10 @@
-const INITIAL_STATE = []
+const INITIAL_STATE = [];
 
-export default function favorites (state = INITIAL_STATE, action) {
+export default function favorites(state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'ADD_FAVORITE':
-      return [...state, {
-        id: Math.random(),
-        name: 'facebook/react',
-        description: 'framework',
-        url: 'http://github.com/facebook/react'
-      }]
+      return [...state, action.payload.data];
     default:
-      return state
+      return state;
   }
 }
